@@ -16,11 +16,12 @@ function keySelect(key) {
     let activeIndex;
     slides.forEach((slide, index) => { if (isActive(slide)) activeIndex = index });
 
+    if (key === 'ArrowUp') changeActiveClasses(slides[2]);
     if (activeIndex === undefined) {
-        if (key === 'ArrowRight') changeActiveClasses(slides[0]);
-        if (key === 'ArrowLeft') changeActiveClasses(slides[slides.length - 1]);
+        if (key === 'ArrowLeft') changeActiveClasses(slides[0]);
+        if (key === 'ArrowRight') changeActiveClasses(slides[slides.length - 1]);
     } else {
-        if (key === 'ArrowDown' || key === 'ArrowUp') clearActiveClasses();
+        if (key === 'ArrowDown') clearActiveClasses();
         if (key === 'ArrowRight') {
             if (activeIndex === slides.length - 1) {
                 changeActiveClasses(slides[0]);
