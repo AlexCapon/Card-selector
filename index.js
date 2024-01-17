@@ -38,8 +38,6 @@ function keySelect(key) {
         }; 
     }
 }
-function getActiveSlide(index, key) {
-}
 function changeActiveClasses(target) {
     slides.forEach((slide) => {
         slide.classList.remove('active')
