@@ -1,9 +1,11 @@
 const slides = document.querySelectorAll('.slide');
 const container = document.querySelector('.container');
 document.addEventListener('keydown', ({ key }) => keySelect(key));
+
 for (const slide of slides) {
     slide.addEventListener('click', ({ target }) => clickSelect(target));
 }
+
 function clickSelect(target) {
     if (target.classList.contains('active')) {
         clearActiveClasses();
