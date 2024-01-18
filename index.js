@@ -18,20 +18,20 @@ function keySelect(key) {
     let activeIndex;
     slides.forEach((slide, index) => { if (isActive(slide)) activeIndex = index });
 
-    if (key === 'ArrowUp') changeActiveClasses(slides[2]);
+    if (key === 'ArrowUp' || key === 'w') changeActiveClasses(slides[2]);
     if (activeIndex === undefined) {
-        if (key === 'ArrowLeft') changeActiveClasses(slides[0]);
-        if (key === 'ArrowRight') changeActiveClasses(slides[slides.length - 1]);
+        if (key === 'ArrowLeft'  || key === 'a') changeActiveClasses(slides[0]);
+        if (key === 'ArrowRight' || key === 'd') changeActiveClasses(slides[slides.length - 1]);
     } else {
-        if (key === 'ArrowDown') clearActiveClasses();
-        if (key === 'ArrowRight') {
+        if (key === 'ArrowDown' || key === 's') clearActiveClasses();
+        if (key === 'ArrowRight' || key === 'd') {
             if (activeIndex === slides.length - 1) {
                 changeActiveClasses(slides[0]);
             } else {
                 changeActiveClasses(slides[activeIndex + 1]);
             }
         }
-        if (key === 'ArrowLeft') {
+        if (key === 'ArrowLeft' || key === 'a') {
             if (activeIndex === 0) {
                 changeActiveClasses(slides[slides.length - 1]);
             } else {
